@@ -22,7 +22,6 @@ def insertar_elementos(fila, columna, contadora1= 0):
                     else:
                         tablero[i][j] = jugadores[contadora1]
                         return False
-                        break
 
                 
 def identificar_ganador():
@@ -59,11 +58,10 @@ def empate(empate1):
             if j == " ": 
                 empate1 = False
     if empate1 == True:
-        print("Hay un empate")
         return empate1
     
 def juego(fila, columna,empate1): 
-  contadora = 0
+
   while True: 
     mostrar_tablero()
     for i in range(len(jugadores)):
@@ -78,7 +76,7 @@ def juego(fila, columna,empate1):
             insertar_elementos(fila, columna, contadora1 = 0)
             empate(empate1)
             if empate(empate1) == True:
-                contadora = 9
+                print("Hay un empate")
                 break
         elif i+1 == 2:
             print("Turno de la o")
@@ -91,12 +89,11 @@ def juego(fila, columna,empate1):
             insertar_elementos(fila, columna, contadora1 = 1)
             empate(empate1)
             if empate(empate1) == True:
-                contadora = 9
+                print("Hay un empate")
                 break
     
         
     if identificar_ganador() == False:
-        contadora = 9
         break
     else: 
         identificar_ganador()
